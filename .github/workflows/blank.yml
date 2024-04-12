@@ -22,6 +22,7 @@ jobs:
       - name: Set variables
         run: |    
           VER=$(cat "$GITHUB_WORKSPACE/PYTHON_VERSION")
+          echo "$VER"
           echo "PYTHON_VERSION=$VER" >> $GITHUB_ENV
           # ls "$GITHUB_WORKSPACE"
           echo "put python version in env: ${{ env.PYTHON_VERSION }}"
