@@ -23,9 +23,9 @@ jobs:
         run: |    
           VER=$(cat "$GITHUB_WORKSPACE/PYTHON_VERSION")
           echo "$VER"
-          echo "PYTHON_VERSION=$VER" >> $GITHUB_ENV
+          # echo "PYTHON_VERSION=$VER" >> $GITHUB_ENV
           # ls "$GITHUB_WORKSPACE"
-          echo "put python version in env: ${{ env.PYTHON_VERSION }}"
+          echo "python version in env: $PYTHON_VERSION"
   
   # This workflow contains a single job called "build"
   build:
@@ -38,11 +38,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: Set python version
+        run: echo "python_version=$(cat '$GITHUB_WORKSPACE/PYTHON_VERSION')" >> $GITHUB_ENV
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
           echo "Hello, world!"
-          echo "python_version var from PYTHON_VERSION file: ${{ env.PYTHON_VERSION }}"
+          echo "python_version var from PYTHON_VERSION file: $python_version"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
