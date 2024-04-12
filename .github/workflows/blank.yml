@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Set variables
         run: |
-          VER=$(cat PYTHON_VERSION)
+          VER=$(cat ./.github/workflows/PYTHON_VERSION)
           echo "PYTHON_VERSION=$VER" >> $GITHUB_ENV
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
