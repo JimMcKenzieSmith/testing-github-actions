@@ -21,8 +21,8 @@ jobs:
     steps:
       - name: Set variables
         run: |
-          VER=$(cat ~/PYTHON_VERSION)
-          echo "PYTHON_VERSION=$VER" >> $GITHUB_ENV
+          ls /home/runner/
+          echo "PYTHON_VERSION=1.12" >> $GITHUB_ENV
   
   # This workflow contains a single job called "build"
   build:
