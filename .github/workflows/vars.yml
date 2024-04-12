@@ -1,4 +1,0 @@
-name: Setup vars
-
-  env:
-    PYTHON_VER: "3.11"
