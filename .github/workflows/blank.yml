@@ -23,7 +23,7 @@ jobs:
       - name: Set variables
         run: |
           ls "$GITHUB_WORKSPACE"
-          cat "$GITHUB_WORKSPACE/PYTHON_VERSION)" >> $GITHUB_ENV
+          cat "$GITHUB_WORKSPACE/PYTHON_VERSION" >> $GITHUB_ENV
           echo "put python version in env: ${{ env.PYTHON_VERSION }}"
   
   # This workflow contains a single job called "build"
