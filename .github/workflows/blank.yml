@@ -28,11 +28,6 @@ jobs:
       - name: Set python version
         run: echo "PYTHON_VERSION=$(cat "$GITHUB_WORKSPACE/PYTHON_VERSION")" >> $GITHUB_ENV
 
-      - name: Set myValue
-        run: echo "myValue=wibble" >> $GITHUB_ENV
-      - name: Echo myValue
-        run: echo "$myValue"
-
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo "$PYTHON_VERSION"
