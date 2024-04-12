@@ -17,13 +17,13 @@ on:
 jobs:
   set_vars:
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v3
       - name: Set variables
-        run: |
-          ls "$GITHUB_WORKSPACE"
-          cat "$GITHUB_WORKSPACE/PYTHON_VERSION" >> $GITHUB_ENV
+        run: |    
+          VER=$(cat "$GITHUB_WORKSPACE/PYTHON_VERSION")
+          echo "PYTHON_VERSION=$VER" >> $GITHUB_ENV
+          # ls "$GITHUB_WORKSPACE"
           echo "put python version in env: ${{ env.PYTHON_VERSION }}"
   
   # This workflow contains a single job called "build"
